@@ -18,10 +18,11 @@ public class Persoana {
     //Mostenirea se declara la nivel de clasa, folosind keyword-ul "extends"
     // In JAVA o clasa poate mosteni doar o singura alta clasa ( mostenire unica )
 
-    public String nume;
-    public String prenume;
-    public int varsta;
-    public String adresa;
+    private String nume;
+    private String prenume;
+    private int varsta;
+    private String adresa;
+
 
     public Persoana(String nume, String prenume, int varsta, String adresa) {
         this.nume = nume;
@@ -35,12 +36,33 @@ public class Persoana {
         System.out.println("Varsta persoanei este " + varsta);
         System.out.println("Adresa persoanei este " + adresa);
 
-
-
-
-
     }
 
+    public String getNume() {
+        return nume;
+    }
 
+    public String getPrenume() {
+        return prenume;
+    }
 
+    public int getVarsta() {
+        return varsta;
+    }
+
+    public String getAdresa() {
+        return adresa;
+    }
+
+    public void setNume(String nume) {
+        this.nume = nume;
+    }
+
+    public void setVarsta(int varsta) {
+        this.varsta = varsta;
+    }
+
+    public void setAdresa(String adresa) {
+        this.adresa = adresa;
+    }
 }

@@ -1,47 +1,54 @@
 package obiectConstructor;
 
-import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.List;
 
 public class Masina {
 
+    // CONSTRUCTOR
 
-    // CONSTRUCTOR --------------
+    // Constructorul are rol de a initializa variabilele unei clase;
+    // Cu alte cuvinte, el stabileste valorile de pornire ale prorietatilor unui obiect;
 
-    // Constructor =  Are rol de a initializa variabilele unei clase.
-// Cu alte cuvinte el stabileste valoride de pornire are proprietatilor unui obiect
+    // Cum recunoastem un constructor?
+    // 1. Numele constructorului este intotdeauna identic cu numele  clasei;
+    // 2. De cele mai multe roi, constructorul este declarat ca public;
 
-    // CUM RECUNOASTEM UN CONSTRUCTOR?
+    // Intr-o clasa putem avea mai multi constructori;
+    // Acestia se deosebesc intre ei prin: numarul de parametri sau tipul parametrilor;
 
-    // 1. Numere constructorului este intotdeauna identic cu numele clasei.
-    // 2. De cele mai multe ori constructorul este declarat ca public \
+    // Important de stiut- O clasa cotine intotdeauna un constructor default;
 
-    // Intr-o clasa putem avea mai multi constructori
-    // Acestia se deosebesc intre ei prin : Numarul parametriilor , nr de parametrii sau tipul parametriilor
+    // Constructorii pot fi de doua tipuri; fara parametri (default) si cu parametri (custom-definit de programator);
 
-    //Important de stiut, o clasa contine intotdeauna un constructor default dar acesta nu se vede!!
+    // OBIECT
 
-    // Constructorii pot fi de 2 tipuri : Constructori fara parametii ( default ) si constructor cu parametrii ( custom - definit de promgramator )
+    // Un obiect este instanta unei clase;
+    // Intr-o clasa putem defini oricate obiecte dorim;
+    // Obiectele se diferentiaza prin numele lor;
+    // Fiecare obiect poate avea valori diferite pentru aceleasi proprietati;
+    // Recunoastem un obiect dupa cuvantul cheie "new";
+    // Structura generala este: tipObiect numeObiect = new tipObiect();
+    // Exemplu concret: Masina dacia = new Masina();
 
-    // OBIECT ----------------
-
-    // Un obiect este instanta unei clase
-    // Intr-o clasa putem definii oricate obiecte dorim.
-    // Obiectele se diferenteaza prin numele lor
-    // Fiecare obiect poate avea valori diferite pentru aceleasi proprietati.
-    // Recunoastem un obiect dupa cuvantul cheie ---- NEW ----
-    // Structura generala este : tipObiect numeObiect = new tipObiect();
-    // Exemplu concret Masina dacia = new Masina();
 
     public String marca;
     public String model;
     public int an;
     public String culoare;
-
     public List<String> dotariInterioare;
     public boolean electrica;
     public int pret;
     public int pretFinal;
+
+    public Masina(String marca, String model, int an, String culoare, List<String> dotariInterioare, boolean electrica) {
+        this.marca = marca;
+        this.model = model;
+        this.an = an;
+        this.culoare = culoare;
+        this.dotariInterioare = dotariInterioare;
+        this.electrica = electrica;
+    }
 
     public Masina(String marca, String model, int an, String culoare, List<String> dotariInterioare, boolean electrica, int pret) {
         this.marca = marca;
@@ -53,48 +60,34 @@ public class Masina {
         this.pret = pret;
     }
 
-    public Masina(String marca, String model, int an, String culoare, List<String> dotariInterioare, boolean electrica) {
-        this.marca = marca;
-        this.model = model;
-        this.an = an;
-        this.culoare = culoare;
-        this.dotariInterioare = dotariInterioare;
-        this.electrica = electrica;
-
-    }
-    public void prezentareMasina(){
+    public void prezentareMasina() {
         System.out.println("Marca masinii este: "+ marca);
         System.out.println("Modelul masinii este: "+ model);
         System.out.println("Anul masinii este: "+ an);
         System.out.println("Culoarea masinii este: "+ culoare);
-        System.out.println("Dotariile masinii sunt: ");
-
-
-        for (int index=0; index<dotariInterioare.size();index++){
+        System.out.println("Dotarile masinii sunt: ");
+        for (int index=0; index< dotariInterioare.size(); index++){
             System.out.println(dotariInterioare.get(index));
         }
         System.out.println("Este masina electrica?: "+ electrica);
         calculPret();
-//        if (pret != 0) {
-//
-//            System.out.println("Pretul masinii este: " + pret);
-//
+//        if (pret!=0){
+//            System.out.println("Pretul masinii este "+ pret);
 //        }
 
-        // Determinam impozitul in functie de anul de fabricatie
-        // Primul caz : <2000 - 500ron
-        // Cazul 2 : 2005 < X < 2015 - 300 ron
-        // Cazul 3 : > 2015 - 100 ron
+//        Determinam impozitul in functie de anul de fabricatie
+//        Primul caz < 2000 - 500 ron
+//        Al doilea caz 2005 < X <2015 - 300 ron
+//        Al treilea caz > 2015 - 100 ron
 
-        }
-
-    public void calculImpozit (){
-        if (an <= 2000){
-            System.out.println(" Impozitul pe masina este de 500 ron");
-        }  else if (an >= 2005 && an <= 2015) {
-            System.out.println("Impozitul este de 300 ron");
-        }  else if (an >= 2015 ) {
-            System.out.println("Impositul este de 100ron");
+    }
+    public void calculImpozit () {
+        if (an <= 2000) {
+            System.out.println("Impozitul pe masina este de 500 ron");
+        } else if (an >= 2005 && an <= 2015) {
+            System.out.println("Impozitul este 300 ron");
+        } else if ( an >= 2015) {
+            System.out.println("Impozitul este 100 ron");
         }
 
     }
@@ -125,5 +118,5 @@ public class Masina {
     }
 }
 
-// tema sa nu apara pentru primele doua masini pretul final
 
+// Tema sa nu apara pentru primele doua masini pretul final
