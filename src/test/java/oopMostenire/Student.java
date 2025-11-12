@@ -1,6 +1,6 @@
 package oopMostenire;
 
-public class Student extends Persoana {
+public class Student extends Persoana implements StudentInterface {
 
     public Student(String nume, String prenume, int varsta, String adresa, String facultate, String domeniu, int anul, boolean restante) {
         super(nume, prenume, varsta, adresa);
@@ -68,5 +68,20 @@ public class Student extends Persoana {
 
     public void setRestante(boolean restante) {
         this.restante = restante;
+    }
+
+    @Override
+    public void mergeLaCursuri() {
+        System.out.println(" Studentul este obligat sa mearga la cursuri ");
+    }
+
+    @Override
+    public void trebuieSaStudieze() {
+        System.out.println(" Studentul trebuie sa studieze ");
+    }
+
+    @Override
+    public void saNuAibaRestante() {
+        System.out.println(" Studentul nu trebuie sa aiba restante ");
     }
 }
